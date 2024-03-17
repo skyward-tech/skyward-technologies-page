@@ -6,16 +6,16 @@
   "About": {
     "paragraph": "We are a team of fully qualified software engineers to meet the functional requirements of your business.",
     "Why": [
-      "Strategic Technology Partner",
-      "Problem-Solving Focus",
-      "Commitment to Transparency",
-      "Results-Oriented Team"
+      "Strategic Technology Partner: We don't just build software, we help you leverage technology to achieve your larger business objectives.",
+      "Problem-Solving Focus: We're driven by understanding your challenges and developing solutions that create tangible results.",
+      "Commitment to Transparency: Clear communication, regular progress updates, and no hidden surprises are fundamental to our approach.",
+      "Results-Oriented Team: Our developers are passionate about delivering software that makes a measurable difference for your business."
     ],
     "Why2": [
-      "Deep Technology Stack Proficiency",
-      "Agile Development",
-      "Quality Assurance",
-      "Maintainability & Scalability"
+      "Deep Technology Stack Proficiency: We're adept in a wide array of languages, frameworks, and databases. Our versatility allows us to select the optimal tools for your project.",
+      "Agile Development & Continuous Delivery: We employ iterative methodologies and prioritize frequent releases. This ensures you get value sooner and can adapt as needed.",
+      "Robust Testing & Quality Assurance: Automated testing, code reviews, and user testing are integral to our process. We deliver software you can rely on.",
+      "Commitment to Maintainability & Scalability: We architect solutions with future growth in mind. Our code is designed to be easily updated and expanded upon."
     ]
   },
   "Gallery": [
@@ -161,24 +161,24 @@
   },
   "Features": [
     {
-      "icon": "fa fa-comments-o",
-      "title": "Lorem ipsum",
-      "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
+      "icon": "fa fa-puzzle-piece",
+      "title": "Custom Software Solutions",
+      "text": "Tailor-made software that perfectly aligns with your unique business needs, ensuring maximum efficiency and impact."
     },
     {
-      "icon": "fa fa-bullhorn",
-      "title": "Lorem ipsum",
-      "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
+      "icon": "fa fa-tasks",
+      "title": "Advanced Development Tools & Technologies",
+      "text": "Leverage cutting-edge technologies like machine learning, artificial intelligence, and cloud computing to empower your software."
     },
     {
-      "icon": "fa fa-group",
-      "title": "Lorem ipsum",
-      "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
+      "icon": "fa fa-plug",
+      "title": "Seamless Integration",
+      "text": "We'll ensure your new software works flawlessly with your existing systems and infrastructure."
     },
     {
-      "icon": "fa fa-magic",
-      "title": "Lorem ipsum",
-      "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
+      "icon": "fa fa-ticket",
+      "title": "Ongoing Support & Maintenance",
+      "text": "Proactive support to keep your software running smoothly and provide updates as your business evolves."
     }
   ]
 }
