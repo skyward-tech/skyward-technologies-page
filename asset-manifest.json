@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/skyward-technologies/static/css/main.ae42ac5f.css",
+    "main.js": "/skyward-technologies/static/js/main.aa75d665.js",
+    "index.html": "/skyward-technologies/index.html",
+    "main.ae42ac5f.css.map": "/skyward-technologies/static/css/main.ae42ac5f.css.map",
+    "main.aa75d665.js.map": "/skyward-technologies/static/js/main.aa75d665.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ae42ac5f.css",
+    "static/js/main.aa75d665.js"
+  ]
+}
