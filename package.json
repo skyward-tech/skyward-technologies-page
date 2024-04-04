@@ -1,7 +1,6 @@
 {
   "name": "skyward-technologies-page",
   "private": true,
-  "homepage": "https://root-marco.github.io/skyward-technologies",
   "dependencies": {
     "emailjs-com": "^3.2.0",
     "gh-pages": "^6.1.1",
