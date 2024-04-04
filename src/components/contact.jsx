@@ -7,6 +7,13 @@ const initialState = {
   email: "",
   message: "",
 };
+
+const config = {
+  serviceId: "service_dx4tft8",
+  templateId: "template_3ufd568",
+  publicId: "h1bm-h9kvOcKzXc0G",
+};
+
 export const Contact = (props) => {
   const [{ name, email, message }, setState] = useState(initialState);
 
@@ -15,16 +22,14 @@ export const Contact = (props) => {
     setState((prevState) => ({ ...prevState, [name]: value }));
   };
   const clearState = () => setState({ ...initialState });
-  
-  
+
   const handleSubmit = (e) => {
     e.preventDefault();
+
     console.log(name, email, message);
-    
-    {/* replace below with your own Service ID, Template ID and Public Key from your EmailJS account */ }
-    
+
     emailjs
-      .sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", e.target, "YOUR_PUBLIC_KEY")
+      .sendForm(config.serviceId, config.templateId, e.target, config.publicId)
       .then(
         (result) => {
           console.log(result.text);
@@ -35,6 +40,7 @@ export const Contact = (props) => {
         }
       );
   };
+  
   return (
     <div>
       <div id="contact">
@@ -152,12 +158,7 @@ export const Contact = (props) => {
       </div>
       <div id="footer">
         <div className="container text-center">
-          <p>
-            &copy; 2023 Issaaf Kattan React Land Page Template. Design by{" "}
-            <a href="http://www.templatewire.com" rel="nofollow">
-              TemplateWire
-            </a>
-          </p>
+          <p>2024 - SKYWARD TECHNOLOGIES LTDA</p>
         </div>
       </div>
     </div>
