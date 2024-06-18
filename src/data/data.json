@@ -143,12 +143,17 @@
     {
       "img": "img/team/03.jpg",
       "name": "Gustavo Queiroz",
+      "job": "COO & Co-Founder"
+    },
+    {
+      "img": "img/team/04.jpg",
+      "name": "Kauan Vitor",
       "job": "Software Developer"
     }
   ],
   "Contact": {
     "address": "São Paulo, Brazil",
-    "phone": "+5511970651185",
+    "phone": "+551198809-8694",
     "email": "skywardtechnologies.ltda@gmail.com",
     "facebook": "https://www.linkedin.com/company/skyward-tech/",
     "twitter": "twitter.com",
