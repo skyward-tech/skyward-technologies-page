@@ -1,8 +1,22 @@
 import React from "react";
 
 export const Navigation = (props) => {
+  const [isTop, setIsTop] = React.useState(true);
+
+  React.useEffect(() => {
+    const onScroll = () => setIsTop(window.scrollY === 0);
+
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <nav id="menu" className="navbar navbar-default navbar-fixed-top">
+    <nav
+      id="menu"
+      className={`navbar navbar-default navbar-fixed-top ${
+        isTop ? "navbar-on-top" : "navbar-on-scrolling"
+      }`}
+    >
       <div className="container">
         <div className="navbar-header">
           <button

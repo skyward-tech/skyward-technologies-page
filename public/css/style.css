@@ -75,9 +75,13 @@ hr {
   padding: 15px;
   transition: all 0.8s;
 }
-#menu.navbar-default {
+#menu.navbar-on-top {
+  background-color: transparent;
+  border: 0;
+}
+#menu.navbar-on-scrolling {
   background-color: #000;
-  border-color: rgba(231, 231, 231, 0);
+  border: 0;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 }
 #menu a.navbar-brand {
@@ -246,7 +250,7 @@ header .intro-text {
 }
 /* Features Section */
 #features {
-  margin-top: 50px;
+  padding: 100px;
   background: #000;
 }
 #features i.fa {
@@ -263,7 +267,7 @@ header .intro-text {
 }
 /* About Section */
 #about {
-  padding: 100px 0;
+  padding: 100px 0 0 0;
 }
 #about h3 {
   font-size: 22px;
@@ -442,7 +446,7 @@ header .intro-text {
 }
 /* Team Section */
 #team {
-  padding: 20px 0;
+  padding: 100px;
 }
 #team h4 {
   margin: 5px 0;
