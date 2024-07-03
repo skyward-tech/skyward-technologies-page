@@ -6,6 +6,7 @@ import { About } from "./components/about";
 import { Services } from "./components/services";
 import { Gallery } from "./components/gallery";
 import { Testimonials } from "./components/testimonials";
+import { Footer } from "./components/footer";
 import { Team } from "./components/team";
 import { Contact } from "./components/contact";
 import JsonData from "./data/data.json";
@@ -34,6 +35,7 @@ const App = () => {
       {/* <Testimonials data={landingPageData.Testimonials} /> */}
       <Team data={landingPageData.Team} />
       <Contact data={landingPageData.Contact} />
+      <Footer />
     </div>
   );
 };
