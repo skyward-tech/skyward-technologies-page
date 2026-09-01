@@ -1,0 +1,40 @@
+---
+export interface Props {
+  title?: string;
+  paragraph?: string;
+}
+
+const { title = "Loading", paragraph = "" } = Astro.props;
+---
+
+<header id="header" class="hero">
+  <div class="hero__bg" aria-hidden="true">
+    <span class="hero__glow hero__glow--one"></span>
+    <span class="hero__glow hero__glow--two"></span>
+    <span class="hero__grid"></span>
+  </div>
+
+  <div class="hero__container">
+    <div class="hero__badge">
+      <i class="fa fa-rocket"></i> Custom software, built right
+    </div>
+
+    <h1 class="hero__title">
+      {title}
+      <span class="hero__title-accent">{paragraph}</span>
+    </h1>
+
+    <div class="hero__actions">
+      <a href="#contact" class="btn btn--primary btn--lg">Start a Project</a>
+      <a href="#features" class="btn btn--ghost btn--lg">
+        Explore Features <i class="fa fa-arrow-down"></i>
+      </a>
+    </div>
+
+    <ul class="hero__highlights">
+      <li><i class="fa fa-check-circle"></i> Strategic technology partner</li>
+      <li><i class="fa fa-check-circle"></i> Transparent, agile delivery</li>
+      <li><i class="fa fa-check-circle"></i> Direct access to the founders</li>
+    </ul>
+  </div>
+</header>

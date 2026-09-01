@@ -1,0 +1,21 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navigation from "../components/Navigation.astro";
+import Hero from "../components/Hero.astro";
+import Features from "../components/Features.astro";
+import About from "../components/About.astro";
+import Team from "../components/Team.astro";
+import Contact from "../components/Contact.astro";
+import Footer from "../components/Footer.astro";
+import data from "../data/data.json";
+---
+
+<Layout>
+  <Navigation />
+  <Hero title={data.Header.title} paragraph={data.Header.paragraph} />
+  <Features data={data.Features} />
+  <About data={data.About} />
+  <Team data={data.Team} />
+  <Contact data={data.Contact} />
+  <Footer data={data.Contact} />
+</Layout>

@@ -1,0 +1,55 @@
+---
+export interface Props {
+  data: { paragraph: string; Why: string[]; Why2: string[] };
+}
+
+const { data } = Astro.props;
+---
+
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-media">
+        <div class="about-media__frame">
+          <img src="/img/about.png" alt="Skyward Technologies team" />
+        </div>
+        <div class="about-badge">
+          <i class="fa fa-code"></i>
+          <div>
+            <strong>Senior Team</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-content">
+        <span class="eyebrow">About Us</span>
+        <h2>Software engineering you can build a business on</h2>
+        <p>{data.paragraph}</p>
+
+        <h3>Why Choose Us?</h3>
+        <div class="about-columns">
+          <ul>
+            {
+              data.Why.map((d) => (
+                <li>
+                  <i class="fa fa-check-circle" />
+                  {d}
+                </li>
+              ))
+            }
+          </ul>
+          <ul>
+            {
+              data.Why2.map((d) => (
+                <li>
+                  <i class="fa fa-check-circle" />
+                  {d}
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

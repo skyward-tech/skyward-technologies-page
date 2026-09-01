@@ -1,0 +1,148 @@
+---
+export interface Props {
+  data: {
+    address: string;
+    phone: string;
+    email: string;
+    facebook: string;
+  };
+}
+
+const { data } = Astro.props;
+---
+
+<section id="contact">
+  <div class="container">
+    <div class="section-title section-title--light">
+      <span class="eyebrow">Get In Touch</span>
+      <h2>Let's build something great</h2>
+      <p>
+        Please fill out the form below to send us an email and we will get
+        back to you as soon as possible.
+      </p>
+    </div>
+
+    <div class="contact-panel">
+      <div class="contact-info">
+        <h3>Contact Info</h3>
+        <p>Reach out directly, we're always happy to talk shop.</p>
+
+        <div class="contact-item">
+          <i class="fa fa-map-marker"></i>
+          <div>
+            <span>Address</span>
+            <strong>{data.address}</strong>
+          </div>
+        </div>
+        <div class="contact-item">
+          <i class="fa fa-phone"></i>
+          <div>
+            <span>Phone</span>
+            <strong>{data.phone}</strong>
+          </div>
+        </div>
+        <div class="contact-item">
+          <i class="fa fa-envelope-o"></i>
+          <div>
+            <span>Email</span>
+            <strong>{data.email}</strong>
+          </div>
+        </div>
+
+        <div class="contact-social">
+          <a
+            target="_blank"
+            href={data.facebook}
+            rel="noreferrer"
+            aria-label="LinkedIn"
+          >
+            <i class="fa fa-linkedin"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <h2>Send us a message</h2>
+        <p>We usually reply within one business day.</p>
+        <form id="contact-form" name="sentMessage">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                class="form-control"
+                placeholder="Your name"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="form-control"
+                placeholder="you@company.com"
+                required
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea
+              name="message"
+              id="message"
+              class="form-control"
+              rows="5"
+              placeholder="Tell us about your project"
+              required></textarea>
+          </div>
+          <button
+            type="submit"
+            id="contact-submit"
+            class="btn btn--primary btn--lg btn--block"
+          >
+            Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import emailjs from "@emailjs/browser";
+
+  const SERVICE_ID = "service_dx4tft8";
+  const TEMPLATE_ID = "template_3ufd568";
+  const PUBLIC_KEY = "h1bm-h9kvOcKzXc0G";
+
+  const form = document.getElementById("contact-form");
+  const submitButton = document.getElementById("contact-submit");
+
+  form?.addEventListener("submit", (event) => {
+    event.preventDefault();
+    if (!form || !submitButton) return;
+
+    submitButton.disabled = true;
+    submitButton.textContent = "Sending...";
+
+    emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form, PUBLIC_KEY).then(
+      () => {
+        form.reset();
+        submitButton.textContent = "Message sent!";
+        setTimeout(() => {
+          submitButton.textContent = "Send Message";
+          submitButton.disabled = false;
+        }, 3000);
+      },
+      (error) => {
+        console.error(error);
+        submitButton.textContent = "Something went wrong";
+        submitButton.disabled = false;
+      },
+    );
+  });
+</script>
