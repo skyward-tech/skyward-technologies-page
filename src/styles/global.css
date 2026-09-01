@@ -331,14 +331,14 @@ p {
   gap: 32px;
 }
 
-.nav__links a {
+.nav__links ul a {
   color: rgba(255, 255, 255, 0.85);
   font-weight: 500;
   font-size: 15px;
   position: relative;
 }
 
-.nav__links a::after {
+.nav__links ul a::after {
   content: "";
   position: absolute;
   left: 0;
@@ -349,11 +349,11 @@ p {
   transition: width 0.25s;
 }
 
-.nav__links a:hover {
+.nav__links ul a:hover {
   color: #fff;
 }
 
-.nav__links a:hover::after {
+.nav__links ul a:hover::after {
   width: 100%;
 }
 
