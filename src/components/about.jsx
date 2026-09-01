@@ -4,36 +4,47 @@ export const About = (props) => {
   return (
     <section id="about">
       <div className="container">
-        <div className="row">
-          <div className="col-xs-12 col-md-6">
-            {" "}
-            <img src="img/about.png" className="img-responsive" alt="" />{" "}
-          </div>
-          <div className="col-xs-12 col-md-6">
-            <div className="about-text">
-              <h2>About Us</h2>
-              <p>{props.data ? props.data.paragraph : "loading..."}</p>
-              <h3>Why Choose Us?</h3>
-              <div className="list-style">
-                <div className="col-lg-6 col-sm-6 col-xs-12">
-                  <ul>
-                    {props.data
-                      ? props.data.Why.map((d, i) => (
-                          <li key={`${d}-${i}`}>{d}</li>
-                        ))
-                      : "loading"}
-                  </ul>
-                </div>
-                <div className="col-lg-6 col-sm-6 col-xs-12">
-                  <ul>
-                    {props.data
-                      ? props.data.Why2.map((d, i) => (
-                          <li key={`${d}-${i}`}> {d}</li>
-                        ))
-                      : "loading"}
-                  </ul>
-                </div>
+        <div className="about-grid">
+          <div className="about-media">
+            <div className="about-media__frame">
+              <img src="img/about.png" alt="Skyward Technologies team" />
+            </div>
+            <div className="about-badge">
+              <i className="fa fa-code"></i>
+              <div>
+                <strong>Senior Team</strong>
+                <span>Engineers only</span>
               </div>
+            </div>
+          </div>
+
+          <div className="about-content">
+            <span className="eyebrow">About Us</span>
+            <h2>Software engineering you can build a business on</h2>
+            <p>{props.data ? props.data.paragraph : "Loading..."}</p>
+
+            <h3>Why Choose Us?</h3>
+            <div className="about-columns">
+              <ul>
+                {props.data
+                  ? props.data.Why.map((d, i) => (
+                      <li key={`${d}-${i}`}>
+                        <i className="fa fa-check-circle"></i>
+                        {d}
+                      </li>
+                    ))
+                  : "Loading..."}
+              </ul>
+              <ul>
+                {props.data
+                  ? props.data.Why2.map((d, i) => (
+                      <li key={`${d}-${i}`}>
+                        <i className="fa fa-check-circle"></i>
+                        {d}
+                      </li>
+                    ))
+                  : "Loading..."}
+              </ul>
             </div>
           </div>
         </div>

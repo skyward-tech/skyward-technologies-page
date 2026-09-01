@@ -1,82 +1,69 @@
 import React from "react";
 
-export const Navigation = (props) => {
+const navLinks = [
+  { href: "#features", label: "Features" },
+  { href: "#about", label: "About" },
+  { href: "#team", label: "Team" },
+  { href: "#contact", label: "Contact" },
+];
+
+export const Navigation = () => {
   const [isTop, setIsTop] = React.useState(true);
+  const [isOpen, setIsOpen] = React.useState(false);
 
   React.useEffect(() => {
-    const onScroll = () => setIsTop(window.scrollY === 0);
-
+    const onScroll = () => setIsTop(window.scrollY < 20);
+    onScroll();
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const closeMenu = () => setIsOpen(false);
+
   return (
     <nav
       id="menu"
-      className={`navbar navbar-default navbar-fixed-top ${
-        isTop ? "navbar-on-top" : "navbar-on-scrolling"
-      }`}
+      className={`nav ${isTop && !isOpen ? "nav--top" : "nav--scrolled"}`}
     >
-      <div className="container">
-        <div className="navbar-header">
-          <button
-            type="button"
-            className="navbar-toggle collapsed"
-            data-toggle="collapse"
-            data-target="#bs-example-navbar-collapse-1"
-          >
-            {" "}
-            <span className="sr-only">Toggle navigation</span>{" "}
-            <span className="icon-bar"></span>{" "}
-            <span className="icon-bar"></span>{" "}
-            <span className="icon-bar"></span>{" "}
-          </button>
-          <a className="navbar-brand page-scroll" href="#page-top">
-            Skyward Tech
-          </a>{" "}
-        </div>
-
-        <div
-          className="collapse navbar-collapse"
-          id="bs-example-navbar-collapse-1"
+      <div className="nav__container">
+        <a
+          className="nav__brand page-scroll"
+          href="#page-top"
+          onClick={closeMenu}
         >
-          <ul className="nav navbar-nav navbar-right">
-            <li>
-              <a href="#features" className="page-scroll">
-                Features
-              </a>
-            </li>
-            <li>
-              <a href="#about" className="page-scroll">
-                About
-              </a>
-            </li>
-            {/* <li>
-              <a href="#services" className="page-scroll">
-                Services
-              </a>
-            </li> */}
-            {/* <li>
-              <a href="#portfolio" className="page-scroll">
-                Gallery
-              </a>
-            </li> */}
-            {/* <li>
-              <a href="#testimonials" className="page-scroll">
-                Testimonials
-              </a>
-            </li> */}
-            <li>
-              <a href="#team" className="page-scroll">
-                Team
-              </a>
-            </li>
-            <li>
-              <a href="#contact" className="page-scroll">
-                Contact
-              </a>
-            </li>
+          <span className="nav__brand-mark">S</span>
+          Skyward<span className="nav__brand-accent">Tech</span>
+        </a>
+
+        <button
+          type="button"
+          className={`nav__toggle ${isOpen ? "is-active" : ""}`}
+          aria-label="Toggle navigation"
+          aria-expanded={isOpen}
+          onClick={() => setIsOpen((open) => !open)}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <div className={`nav__links ${isOpen ? "is-open" : ""}`}>
+          <ul>
+            {navLinks.map((link) => (
+              <li key={link.href}>
+                <a href={link.href} className="page-scroll" onClick={closeMenu}>
+                  {link.label}
+                </a>
+              </li>
+            ))}
           </ul>
+          <a
+            href="#contact"
+            className="btn btn--primary btn--sm nav__cta page-scroll"
+            onClick={closeMenu}
+          >
+            Get in Touch
+          </a>
         </div>
       </div>
     </nav>

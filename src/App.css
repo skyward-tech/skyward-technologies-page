@@ -1,18 +1,1 @@
-@media screen and (max-width: 400px) {
-  #features {
-    padding: 20px;
-    width: 100%;
-  }
-  #about,
-  #services,
-  #testimonials,
-  #team,
-  #contact,
-  #footer {
-    width: 100%;
-  }
-
-  #portfolio {
-    width: 110%;
-  }
-}
+/* Component-level overrides live in public/css/style.css */

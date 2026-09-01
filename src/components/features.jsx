@@ -2,17 +2,23 @@ import React from "react";
 
 export const Features = (props) => {
   return (
-    <section id="features" className="text-center">
+    <section id="features">
       <div className="container">
-        <div className="col-md-10 col-md-offset-1 section-title">
-          <h2>Features</h2>
+        <div className="section-title">
+          <span className="eyebrow">Why Skyward</span>
+          <h2>Everything you need from an engineering partner</h2>
+          <p>
+            From architecture to delivery, we bring the tools and discipline of
+            a senior engineering team to every project.
+          </p>
         </div>
-        <div className="row">
+        <div className="features-grid">
           {props.data
             ? props.data.map((d, i) => (
-                <div key={`${d.title}-${i}`} className="col-xs-6 col-md-3">
-                  {" "}
-                  <i className={d.icon}></i>
+                <div key={`${d.title}-${i}`} className="feature-card">
+                  <div className="feature-card__icon">
+                    <i className={d.icon}></i>
+                  </div>
                   <h3>{d.title}</h3>
                   <p>{d.text}</p>
                 </div>
