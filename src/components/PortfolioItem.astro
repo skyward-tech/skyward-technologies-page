@@ -1,0 +1,16 @@
+---
+export interface Props {
+  title: string;
+  largeImage: string;
+  smallImage: string;
+}
+
+const { title, largeImage, smallImage } = Astro.props;
+---
+
+<a href={largeImage} title={title} class="portfolio-item">
+  <img src={smallImage} alt={title} loading="lazy" />
+  <div class="portfolio-item__overlay">
+    <h4>{title}</h4>
+  </div>
+</a>

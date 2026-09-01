@@ -1,0 +1,33 @@
+---
+export interface Props {
+  data: { icon: string; name: string; text: string }[];
+}
+
+const { data } = Astro.props;
+---
+
+<section id="services">
+  <div class="container">
+    <div class="section-title section-title--light">
+      <span class="eyebrow">Our Services</span>
+      <h2>How we help you ship</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit duis sed
+        dapibus leonec.
+      </p>
+    </div>
+    <div class="services-grid">
+      {
+        data.map((d) => (
+          <div class="service-card">
+            <div class="service-card__icon">
+              <i class={d.icon} />
+            </div>
+            <h3>{d.name}</h3>
+            <p>{d.text}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

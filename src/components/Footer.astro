@@ -1,0 +1,45 @@
+---
+export interface Props {
+  data?: { facebook?: string };
+}
+
+const { data } = Astro.props;
+---
+
+<footer id="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="nav__brand-mark">S</span>
+        <div>
+          <strong>Skyward Technologies</strong>
+          <p>Ascend to smarter solutions.</p>
+        </div>
+      </div>
+
+      <nav class="footer-links">
+        <ul>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#team">Team</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer-social">
+        <a
+          target="_blank"
+          href={data?.facebook || "/"}
+          rel="noreferrer"
+          aria-label="LinkedIn"
+        >
+          <i class="fa fa-linkedin"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2024 - SKYWARD TECHNOLOGIES LTDA. All rights reserved.</p>
+    </div>
+  </div>
+</footer>

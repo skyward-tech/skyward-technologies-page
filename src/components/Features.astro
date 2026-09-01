@@ -1,0 +1,33 @@
+---
+export interface Props {
+  data: { icon: string; title: string; text: string }[];
+}
+
+const { data } = Astro.props;
+---
+
+<section id="features">
+  <div class="container">
+    <div class="section-title">
+      <span class="eyebrow">Why Skyward</span>
+      <h2>Everything you need from an engineering partner</h2>
+      <p>
+        From architecture to delivery, we bring the tools and discipline of a
+        senior engineering team to every project.
+      </p>
+    </div>
+    <div class="features-grid">
+      {
+        data.map((d) => (
+          <div class="feature-card">
+            <div class="feature-card__icon">
+              <i class={d.icon} />
+            </div>
+            <h3>{d.title}</h3>
+            <p>{d.text}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
